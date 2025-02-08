@@ -8,17 +8,17 @@ import MobileNavigation from '../components/MobileNavigation'
 const Home = () => {
   return (
     <div className='flex flex-col md:flex-row bg-zinc-300'>
-        <div className='hidden md:inline w-1/5 h-screen'>
+        <div className='hidden md:inline w-1/6 h-screen'>
             <Sidebar/>
         </div>
-        <div className="main bg-zinc-300 w-full md:w-4/5 h-screen">
-            <div className="graph h-2/5 w-full">
+        <div className="main bg-zinc-300 w-full md:w-5/6 h-screen">
+            <div className="graph h-3/6 w-full">
                 <Graph/>
             </div>
             <div className="menu-tiles w-full">
                 <MenuTiles/>
             </div>
-            <div className="transaction h-2/5 w-full">
+            <div className="transaction h-2/6 w-full">
                 <TransactionList/>
             </div>
             <div className="absolute w-full mobilenavigation md:hidden">

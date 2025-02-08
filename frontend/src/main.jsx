@@ -6,6 +6,11 @@ import {createBrowserRouter,RouterProvider, createRoutesFromElements, Route,Rout
 import Home from './pages/Home.jsx'
 import Authenticate from './pages/Authenticate.jsx'
 import Register from './pages/Register.jsx'
+import Blog from './pages/Blog.jsx'
+import Analyze from './pages/Analyze.jsx'
+import Investment from './pages/Investment.jsx'
+import Profile from './pages/Profile.jsx'
+import Communities from './pages/communities.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -15,6 +20,11 @@ const router = createBrowserRouter(
       <Route path='/home' element={<Home />}/>
       <Route path='/authenticate' element={<Authenticate />}/>
       <Route path='/register' element={<Register />}/>
+      <Route path='/blog' element={<Blog />}/>
+      <Route path='/analyze' element={<Analyze />}/>
+      <Route path='/communities' element={<Communities />}/>
+      <Route path='/investment' element={<Investment />}/>
+      <Route path='/profile' element={<Profile />}/>
     </Route>
   </>
   )
