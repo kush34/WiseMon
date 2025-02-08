@@ -1,6 +1,5 @@
 import React from 'react'
 import Navigation from './components/Navigation'
-
 const App = () => {
   return (
     <div className='bg-black w-full h-screen text-white'>
