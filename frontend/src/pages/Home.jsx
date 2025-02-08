@@ -3,14 +3,15 @@ import Sidebar from '../components/Sidebar'
 import Graph from '../components/Graph'
 import MenuTiles from '../components/MenuTiles'
 import TransactionList from '../components/TransactionList'
+import MobileNavigation from '../components/MobileNavigation'
 
 const Home = () => {
   return (
-    <div className='flex'>
-        <div className='w-1/5 bg-black h-screen'>
+    <div className='flex flex-col md:flex-row bg-zinc-300'>
+        <div className='hidden md:inline w-1/5 h-screen'>
             <Sidebar/>
         </div>
-        <div className="main bg-zinc-300 w-4/5 h-screen">
+        <div className="main bg-zinc-300 w-full md:w-4/5 h-screen">
             <div className="graph h-2/5 w-full">
                 <Graph/>
             </div>
@@ -19,6 +20,9 @@ const Home = () => {
             </div>
             <div className="transaction h-2/5 w-full">
                 <TransactionList/>
+            </div>
+            <div className="absolute w-full mobilenavigation md:hidden">
+                <MobileNavigation/>
             </div>
         </div>
     </div>

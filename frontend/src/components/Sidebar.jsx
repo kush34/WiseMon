@@ -7,20 +7,20 @@ import { IndianRupee } from 'lucide-react';
 
 const Sidebar = () => {
   return (
-    <div className='text-white'>
-        <div className="brand-title hover:text-green-500 font-bold p-5 text-2xl">
+    <div className='text-white bg-black h-screen'>
+        <div className="brand-title hover:text-zinc-400 font-bold p-5 text-2xl">
             WiseMon
         </div>
         <div className="navlinks p-5 text-xl">
             <ul className=''>
-                <li className='mx-1 my-5 cursor-pointer flex gap-2 hover:text-green-500'><House />Home</li>
-                <li className='mx-1 my-5 cursor-pointer flex gap-2 hover:text-green-500'><BrainCircuit /> Analyze</li>
-                <li className='mx-1 my-5 cursor-pointer flex gap-2 hover:text-green-500'><RadioTower />Communities</li>
-                <li className='mx-1 my-5 cursor-pointer flex gap-2 hover:text-green-500'><Newspaper />Blog</li>
-                <li className='mx-1 my-5 cursor-pointer flex gap-2 hover:text-green-500'><IndianRupee />Investment</li>
+                <li className='mx-1 my-5 cursor-pointer flex gap-2 hover:text-zinc-400'><House />Home</li>
+                <li className='mx-1 my-5 cursor-pointer flex gap-2 hover:text-zinc-400'><BrainCircuit /> Analyze</li>
+                <li className='mx-1 my-5 cursor-pointer flex gap-2 hover:text-zinc-400'><RadioTower />Communities</li>
+                <li className='mx-1 my-5 cursor-pointer flex gap-2 hover:text-zinc-400'><Newspaper />Blog</li>
+                <li className='mx-1 my-5 cursor-pointer flex gap-2 hover:text-zinc-400'><IndianRupee />Investment</li>
             </ul>
         </div>
-        <div className="ml-5 absolute bottom-0 profile flex items-center justify-start cursor-pointer hover:text-green-500">
+        <div className="ml-5 absolute bottom-0 profile flex items-center justify-start cursor-pointer hover:text-zinc-400">
             <div className="image-profile">
                 <img
                 className='mx-2 my-5 w-10 h-10 rounded-full'  
