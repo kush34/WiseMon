@@ -1,8 +1,7 @@
 import React from 'react'
 import Sidebar from '../components/Sidebar'
-import { useNavigate } from 'react-router-dom'
+import BackBtn from '../components/BackBtn';
 const Communities = () => {
-  const navigate = useNavigate();
   return (
     <div>
       Communities
@@ -14,6 +13,9 @@ const Communities = () => {
       </div>
       <div className="post-list">
 
+      </div>
+      <div className="backbtn p-5">
+        <BackBtn/>
       </div>
     </div>
   )

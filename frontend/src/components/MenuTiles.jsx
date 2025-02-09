@@ -7,13 +7,13 @@ const MenuTiles = () => {
         <div onClick={()=>navigate('/budget')} className="Menucard bg-white w-1/5 h-10 rounded-xl  flex items-center justify-center font-semibold cursor-pointer">
             Budget
         </div>
-        <div className="Menucard bg-white w-1/5 h-10 rounded-xl  flex items-center justify-center font-semibold cursor-pointer">
-            Tracking
+        <div onClick={()=>navigate('/transaction')} className="Menucard bg-white w-1/5 h-10 rounded-xl  flex items-center justify-center font-semibold cursor-pointer">
+            Transaction
         </div>
-        <div className="Menucard bg-white w-1/5 h-10 rounded-xl  flex items-center justify-center font-semibold cursor-pointer">
+        <div onClick={()=>navigate('/debt')} className="Menucard bg-white w-1/5 h-10 rounded-xl  flex items-center justify-center font-semibold cursor-pointer">
             Debt
         </div>
-        <div className="Menucard bg-white w-1/5 h-10 rounded-xl  flex items-center justify-center font-semibold cursor-pointer">
+        <div onClick={()=>navigate('/goals')} className="Menucard bg-white w-1/5 h-10 rounded-xl  flex items-center justify-center font-semibold cursor-pointer">
             Goals
         </div>
     </div>
