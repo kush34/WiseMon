@@ -1,8 +1,21 @@
 import express from 'express';
 import 'dotenv/config'
-
+import cors from 'cors';
+import connectDB from './Config/database.js';
+import userRouter from './Router/userRouter.js';
 const app = express(); 
 
+connectDB()
+
+//for CORS and form data 
+var corsOptions = {
+    origin: process.env.Frontend_URL,
+    optionsSuccessStatus: 200
+  };
+app.use(cors(corsOptions));
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
+app.use('/user',userRouter)
 
 app.get("/", (req, res) => {
   res.send("hello from backend");
