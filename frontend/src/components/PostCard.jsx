@@ -5,11 +5,11 @@ import { Heart } from 'lucide-react';
 
 const PostCard = () => {
   return (
-    <div className='w-full h-1/3 flex flex-col justify-around'>
+    <div className='w-full h-1/3 flex flex-col rounded justify-around border'>
         <div className="post-title text-xl font-medium p-2">
             How to Plan Your SIP?
         </div>
-        <div className="post-description p-2 h-2/3 overflow-hidden">
+        <div className="post-description p-2 h-1/3 overflow-hidden">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero aut repellat distinctio aperiam vel possimus autem ab architecto magni quisquam dolor, quo mollitia ducimus sint perspiciatis iusto laborum atque rem at ipsam!
         </div>
         <div className="action-post flex justify-between p-2">

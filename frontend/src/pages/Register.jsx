@@ -6,7 +6,7 @@ const Authenticate = () => {
 
   return (
     <div className='flex'>
-      <div className="left w-1/2 bg-zinc-900 h-screen flex justify-center items-center">
+      <div className="hidden left w-1/2 bg-zinc-900 h-screen xl:flex justify-center items-center">
         <div className="heading text-2xl font-semibold text-white">
             Start Your <br/>  
             <span className='text-6xl'>
@@ -14,8 +14,8 @@ const Authenticate = () => {
             </span>
         </div>
       </div>
-      <div className="right w-1/2 bg-zinc-300 h-screen flex justify-center items-center">
-      <div className='bg-white w-1/2 h-1/2 rounded flex flex-col justify-center items-center '>
+      <div className="right w-full  xl:w-1/2 bg-zinc-300 h-screen flex justify-center items-center">
+      <div className='bg-white w-2/3 md:w-1/2 h-1/2 rounded flex flex-col justify-center items-center '>
         <div className="head text-2xl font-semibold mb-5">
                 Register
         </div>
