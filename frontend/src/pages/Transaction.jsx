@@ -22,7 +22,7 @@ const Transaction = () => {
         <div className="title text-3xl font-medium p-5">
             Transaction
         </div>
-        <div className="transaction-list flex flex-col gap-3 p-4 m-5 rounded h-4/6 bg-white">
+        <div className="transaction-list flex flex-col gap-3 p-4 m-5 rounded h-4/6 bg-white overflow-y-scroll no-scrollbar">
             {list.map((item)=>{
                 return(
                     <TransactionCard props={item}/>

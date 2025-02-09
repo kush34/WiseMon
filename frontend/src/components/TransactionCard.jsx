@@ -7,7 +7,7 @@ const TransactionCard = ({props}) => {
 
   return (
     <div className='flex justify-around'>
-        <div className="category w-1/5 flex justify-center">
+        <div className="hidden category w-1/5 md:flex justify-center">
         
         </div>
         <div className="title w-1/5 flex justify-center">
