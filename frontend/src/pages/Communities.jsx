@@ -1,5 +1,6 @@
 import React from 'react'
 import BackBtn from '../components/BackBtn';
+import PostCard from '../components/PostCard';
 const Communities = () => {
   return (
     <div>
@@ -20,8 +21,8 @@ const Communities = () => {
             </div>
           </div>
         </div>
-        <div className="post-list h-full w-2/5">
-          Post-list
+        <div className="post-list h-full w-2/5 border">
+          <PostCard/>
 
         </div>
       </div>
