@@ -1,6 +1,8 @@
 import React from 'react'
 import Navigation from './components/Navigation'
+import { useNavigate } from 'react-router-dom'
 const App = () => {
+  const navigate = useNavigate();
   return (
     <div className='bg-black w-full h-screen text-white'>
       <div className='p-5'>
@@ -12,7 +14,7 @@ const App = () => {
             Your Ultimate<br></br>
             Finance Guide 
           </div>
-          <div className="calltoaction font-semibold text-xl bg-green-600 px-4 flex justify-center py-2 rounded mt-5">
+          <div onClick={()=>navigate('/register')} className="cursor-pointer calltoaction font-semibold text-xl bg-green-600 px-4 flex justify-center py-2 rounded mt-5">
             Get Started
           </div>
         </div>
