@@ -12,6 +12,11 @@ const userSchema = new mongoose.Schema({
     password:{
         type:String,
         require : true
+    },
+    salary:{
+        type:Number,
+        require : true,
+        default:30000
     }
 })
 

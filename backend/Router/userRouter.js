@@ -3,6 +3,7 @@ import User from '../Models/userModel.js';
 import bcrypt from 'bcrypt';
 import JWT from 'jsonwebtoken';
 import 'dotenv/config';
+import verifyToken from '../Middlewares/verifyToken.js';
 const router = express.Router();
 
 router.post("/register", async (req, res) => {
@@ -61,4 +62,20 @@ router.post('/login',async (req,res)=>{
     }
 })
 
+router.get('/userInfo',verifyToken,async(req,res)=>{
+    try{
+        let user = req.user;
+        // console.log(user);
+        let DBuser = await User.findOne({email:user.email});
+        if(!DBuser) res.status(404).send("something went wrong...")  
+        else{
+            DBuser.password= '';
+          res.status(200).send(DBuser)
+        }
+    }
+    catch(err){
+        console.log(err.message);
+    }
+
+})
 export default router
