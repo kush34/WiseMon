@@ -33,7 +33,7 @@ const Home = () => {
         </div>
         <div className="main bg-zinc-300 w-full md:w-5/6 h-screen">
             <div className="graph h-3/6 w-full">
-                <Graph/>
+                <Graph expenseData={expenseData}/>
             </div>
             <div className="menu-tiles w-full">
                 <MenuTiles/>
