@@ -3,6 +3,7 @@ import 'dotenv/config'
 import cors from 'cors';
 import connectDB from './Config/database.js';
 import userRouter from './Router/userRouter.js';
+import ExpenseRouter from './Router/expenseRouter.js';
 const app = express(); 
 
 connectDB()
@@ -16,6 +17,7 @@ app.use(cors(corsOptions));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use('/user',userRouter)
+app.use('/expense',ExpenseRouter)
 
 app.get("/", (req, res) => {
   res.send("hello from backend");
