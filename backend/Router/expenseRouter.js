@@ -6,7 +6,7 @@ import Expense from '../Models/expenseModel.js';
 const router = express.Router();
 
 
-router.get("/create",verifyToken, async (req, res) => {
+router.post("/create",verifyToken, async (req, res) => {
     try{
         let user = req.user;
         // console.log(user);
