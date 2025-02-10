@@ -8,12 +8,14 @@ const router = express.Router();
 router.post('/create',verifyToken,async (req,res)=>{
     try {
         let user = req.user;
-        let {BlogContent} = req.body;
+        let {BlogContent,title,image} = req.body;
         if(!BlogContent) {
             res.status(403).send("incomplete data.. pls try again");
         }
         let newBlog = await Blog.create({
             BlogContent,
+            title,
+            image,
             author:user.email
         })
         res.status(200).send("Blog Posted");
@@ -26,7 +28,7 @@ router.get('/getBlogs',verifyToken,async (req,res)=>{
     try {
         let user = req.user;
         let BlogList = await Blog.find({})
-        console.log(BlogList);
+        // console.log(BlogList);
         res.status(200).send(BlogList);
     } catch (error) {
         

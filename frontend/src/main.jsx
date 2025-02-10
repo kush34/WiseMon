@@ -16,6 +16,7 @@ import Transaction from './pages/Transaction.jsx'
 import Debt from './components/Debt.jsx'
 import Goals from './components/Goals.jsx'
 import AddExpense from './pages/AddExpense.jsx'
+import BlogDisp from './pages/BlogDisp.jsx'
 const router = createBrowserRouter(
   createRoutesFromElements(
   <>
@@ -34,6 +35,7 @@ const router = createBrowserRouter(
       <Route path='/debt' element={<Debt />}/>
       <Route path='/goals' element={<Goals />}/>
       <Route path='/addExpense' element={<AddExpense />}/>
+      <Route path='/blog/:id' element={<BlogDisp />}/>
     </Route>
   </>
   )
