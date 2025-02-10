@@ -45,7 +45,7 @@ const Home = () => {
                 <MobileNavigation/>
             </div>
         </div>
-    </div>
+    </div>  
 
   )
 }
