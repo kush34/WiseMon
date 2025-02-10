@@ -4,6 +4,7 @@ import cors from 'cors';
 import connectDB from './Config/database.js';
 import userRouter from './Router/userRouter.js';
 import ExpenseRouter from './Router/expenseRouter.js';
+import BlogRouter from './Router/blogRouter.js'
 const app = express(); 
 
 connectDB()
@@ -18,6 +19,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use('/user',userRouter)
 app.use('/expense',ExpenseRouter)
+app.use('/blog',BlogRouter)
 
 app.get("/", (req, res) => {
   res.send("hello from backend");
