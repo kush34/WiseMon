@@ -19,6 +19,7 @@ const Sidebar = () => {
                 <li onClick={()=>navigate('/communities')} className='mx-1 my-5 cursor-pointer flex gap-2 hover:text-zinc-400'><RadioTower />Communities</li>
                 <li onClick={()=>navigate('/blog')} className='mx-1 my-5 cursor-pointer flex gap-2 hover:text-zinc-400'><Newspaper />Blog</li>
                 <li onClick={()=>navigate('/investment')} className='mx-1 my-5 cursor-pointer flex gap-2 hover:text-zinc-400'><IndianRupee />Investment</li>
+                <li onClick={()=>navigate('/addExpense')} className='mx-1 my-5 cursor-pointer flex gap-2 hover:text-zinc-400'><IndianRupee />Add Expense</li>
             </ul>
         </div>
         <div onClick={()=>navigate('/profile')} className="ml-5 absolute bottom-0 profile flex items-center justify-start cursor-pointer hover:text-zinc-400">
