@@ -48,4 +48,28 @@ router.get("/create",verifyToken, async (req, res) => {
 //     }
 // });
 
+
+//sends expense data of particular user >>
+router.get('/getExpenseData',verifyToken,async (req,res)=>{
+    try{
+      let user = req.user;
+      if(user){
+          const DBuser = await User.findOne({email:user.email})
+          if(DBuser){
+              // console.log(DBuser);
+              const list = await Expense.find({user_id:DBuser._id})
+              // console.log(list);
+              if(list) res.status(200).send(list);
+          }
+      }
+      else{
+          res.status(404).send("No user found...")
+      }
+    }
+    catch(err){
+        console.log(err);
+    }
+  
+})
+
 export default router
