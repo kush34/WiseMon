@@ -5,7 +5,7 @@ import JWT from 'jsonwebtoken';
 import 'dotenv/config';
 const router = express.Router();
 
-router.get("/register", async (req, res) => {
+router.post("/register", async (req, res) => {
     try{
         const {name,email,password} = req.body;
         let user = await User.findOne({email});
@@ -33,7 +33,7 @@ router.get("/register", async (req, res) => {
     }     
 });
 
-router.get('/login',async (req,res)=>{
+router.post('/login',async (req,res)=>{
     try{
 
         let {email,password}=req.body;
