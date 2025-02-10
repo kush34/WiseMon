@@ -35,6 +35,18 @@ router.get('/getBlogs',verifyToken,async (req,res)=>{
     }
 
 })
+router.post('/blogContent',verifyToken,async (req,res)=>{
+    try {
+        let user = req.user;
+        let {blogId}= req.body;
+        let BlogList = await Blog.findOne({_id:blogId})
+        // console.log(BlogList);
+        res.status(200).send(BlogList);
+    } catch (error) {
+        
+    }
+
+})
 
 
 export default router;
