@@ -7,7 +7,16 @@ const AddExpense = () => {
   const [description,setDescription] = useState();
   const [category,setCategory] = useState();
   const [amount,setAmount] = useState();
+  const validateInput = ()=>{
+    if(!description || !amount || !category){
+      return false
+    }
+    if(isNaN(amount)) return false;
+    return true;
+  }
   const handleSubmit = async ()=>{
+    const res = validateInput();
+    if(!res) return;
      // console.log(description,amount,category);
      let token = JSON.parse(localStorage.getItem("Token"));
      // console.log(token);
@@ -31,7 +40,7 @@ const AddExpense = () => {
           Add Expense
         </div>
         <div className='w-full flex items-center justify-center h-[70vh]'>
-          <div className="container w-1/3 flex flex-col items-center bg-white justify-center gap-10 p-10">
+          <div className="container md:w-1/3 flex flex-col items-center bg-white justify-center gap-10 p-10">
             <div className="input-description">
               <input onChange={(e)=>setDescription(e.target.value)} className='outline-none border-b' type="text" name="" id="" placeholder='enter your desciption'/>
             </div>
