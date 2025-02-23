@@ -78,4 +78,21 @@ router.get('/userInfo',verifyToken,async(req,res)=>{
     }
 
 })
+
+router.post("/updateUserInfo",verifyToken, async (req,res)=>{
+    try{
+        let user = req.user;
+        let {newSalary} = req.body;
+        let DBuser = await User.findOneAndUpdate({email:user.email},{salary:newSalary},{new:true});
+        if(!DBuser){
+            res.status(404).send("something went wrong!... pls try again...");
+        }else{
+            console.log(DBuser);
+            res.status(200).send("userDetails update!")
+        }
+    }
+    catch(err){
+        console.log(err.message);
+    }
+})
 export default router

@@ -58,7 +58,7 @@ const AddExpense = () => {
                       <option value="snacks">Snacks</option>
                   </select>          </div>
             <div className="input-amount">
-              <input onChange={(e)=>setAmount(e.target.value)} className='outline-none border-b' type="text" name="" id="" placeholder='enter you amount' />
+              <input onChange={(e)=>setAmount(e.target.value)} className='outline-none border-b' type="number" name="" id="" placeholder='enter you amount' />
             </div>
             <div className="submit">
               <button onClick={handleSubmit} className='bg-black text-white font-semibold rounded px-4 py-2 cursor-pointer'>Submit</button>
