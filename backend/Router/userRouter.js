@@ -100,7 +100,6 @@ router.post("/updateUserInfo",verifyToken, async (req,res)=>{
 router.post("/getStock",verifyToken, async (req,res)=>{
     try {
         let {symbol} = req.body;
-        console.log(symbol);
         const result = await yahooFinance.quote(symbol); 
         res.json({
           name: result.shortName,
@@ -114,4 +113,3 @@ router.post("/getStock",verifyToken, async (req,res)=>{
         res.status(500).json({ error: "Failed to fetch stock data" });
       }
 })
-export default router

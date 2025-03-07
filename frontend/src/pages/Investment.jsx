@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import BackBtn from '../components/BackBtn'
 import { Search } from 'lucide-react';
+import { ChartLine } from 'lucide-react';
+
 import axios from 'axios';
 
 const Investment = () => {
@@ -51,7 +53,10 @@ const Investment = () => {
               Current Price: {stock?.price}
             </div>
             <div className={`${stock.change<0 ? "text-red-600" : "text-green-500"}`}>
-              Change : {stock?.change}
+             Change Percent : {stock?.changePercent}
+            </div>
+            <div className="chart hover:text-green-500 ease-in ">
+              <ChartLine />
             </div>
           </div>
           )
