@@ -27,7 +27,7 @@ const PostArea = () => {
         })
     }
   return (
-    <div className='flex xl:w-1/3 items-center flex-col gap-2 border p-10 rounded'>
+    <div className='flex xl:w-1/3 items-center flex-col gap-2 bg-zinc-200 p-10 rounded-xl'>
         <div className='text-xl font-semibold'>
             What's bugging you...
         </div>
