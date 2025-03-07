@@ -4,6 +4,7 @@ import bcrypt from 'bcrypt';
 import JWT from 'jsonwebtoken';
 import 'dotenv/config';
 import verifyToken from '../Middlewares/verifyToken.js';
+import yahooFinance from "yahoo-finance2";
 const router = express.Router();
 
 router.post("/register", async (req, res) => {
@@ -94,5 +95,23 @@ router.post("/updateUserInfo",verifyToken, async (req,res)=>{
     catch(err){
         console.log(err.message);
     }
+})
+
+router.post("/getStock",verifyToken, async (req,res)=>{
+    try {
+        let {symbol} = req.body;
+        console.log(symbol);
+        const result = await yahooFinance.quote(symbol); 
+        res.json({
+          name: result.shortName,
+          price: result.regularMarketPrice,
+          change: result.regularMarketChange,
+          changePercent: result.regularMarketChangePercent,
+          currency: result.currency,
+        });
+      } catch (error) {
+        console.log(error);
+        res.status(500).json({ error: "Failed to fetch stock data" });
+      }
 })
 export default router
