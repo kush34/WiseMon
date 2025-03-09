@@ -127,4 +127,26 @@ router.post("/getStockInfo",verifyToken, async (req,res)=>{
       }
 })
 
+router.post("/getStockParams",verifyToken, async (req,res)=>{
+    try {
+        const symbol = req.body.symbol.toUpperCase();
+        const result = await yahooFinance.quoteSummary(symbol, { modules: ["summaryDetail", "financialData"] });
+    
+        const metrics = {
+          peRatio: result.summaryDetail.trailingPE, // P/E Ratio
+          marketCap: result.summaryDetail.marketCap, // Market Capitalization
+          dividendYield: result.summaryDetail.dividendYield, // Dividend Yield
+          previousClose: result.summaryDetail.previousClose, // Previous Closing Price
+          fiftyTwoWeekHigh: result.summaryDetail.fiftyTwoWeekHigh, // 52-Week High
+          fiftyTwoWeekLow: result.summaryDetail.fiftyTwoWeekLow, // 52-Week Low
+          profitMargins: result.financialData.profitMargins, // Profit Margins
+          returnOnEquity: result.financialData.returnOnEquity, // ROE (Return on Equity)
+        };
+    
+        res.json(metrics);
+      } catch (error) {
+        console.error("Error fetching stock metrics:", error);
+      }
+})
+
 export default router;

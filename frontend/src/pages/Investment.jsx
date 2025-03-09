@@ -41,32 +41,39 @@ const Investment = () => {
     navigate(`${code}`)
   }
   return (
-    <div>
+    <div className='h-screen'>
       <div className="title text-2xl font-medium p-5">
         Investment
       </div>
-      <div className="searchedList p-5 h-[40vh] overflow-x-scroll flex flex-col gap-5 justify-center items-center w-full">
-        {stockList && stockList.map((stock)=>{
-          return (
-          <div className = 'text-xl w-1/3 bg-zinc-200 rounded px-5 py-2'>
-            <div>
-              Company Name : {stock?.name}
-            </div>
-            <div>
-              Current Price: {stock?.price}
-            </div>
-            <div className={`${stock.change<0 ? "text-red-600" : "text-green-500"}`}>
-             Change Percent : {stock?.changePercent}
-            </div>
-            <div onClick={()=>handleChartClick(stock.symbol)} className="chart hover:text-sky-500 ease-in ">
-              <ChartLine />
-            </div>
+      <div className='h-2/4 flex'>
+        <div className='w-1/3 h-full m-5'>
+          <div className='font-medium'>
+            NEWS FEED
           </div>
-          )
-        })
-        }
+        </div>
+        <div className="searchedList h-full p-5 overflow-x-scroll flex flex-col gap-5 justify-center items-center w-full">
+          {stockList && stockList.map((stock)=>{
+            return (
+            <div className = 'sm:text-sm md:text-lg xl:text-xl md:w-1/3 bg-zinc-200 rounded mt-2 p-3'>
+              <div>
+                Company Name : {stock?.name}
+              </div>
+              <div>
+                Current Price: {stock?.price}
+              </div>
+              <div className={`${stock.change<0 ? "text-red-600" : "text-green-500"}`}>
+              Change Percent : {stock?.changePercent}
+              </div>
+              <div onClick={()=>handleChartClick(stock.symbol)} className="chart hover:text-sky-500 ease-in ">
+                <ChartLine />
+              </div>
+            </div>
+            )
+          })
+          }
+        </div>
       </div>
-      <div className='w-full h-[30vh] flex flex-col justify-center items-center'>
+      <div className='w-full h-1/4 flex flex-col justify-center items-center'>
           <div className="title font-medium md:text-2xl m-5">
             Find Opportunities that secures your future 🔥
           </div>
@@ -76,7 +83,7 @@ const Investment = () => {
           </div>
       </div>
       
-      <div className="backbtn p-5">
+      <div className="backbtn mx-5">
         <BackBtn/>
       </div>
     </div>
