@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from "chart.js";
 import BackBtn from '../components/BackBtn';
+import NewsCard from '../components/NewsCard';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
@@ -12,6 +13,7 @@ const StockInfo = () => {
     const [loading,setLoading] = useState(true);
     const [chartData, setChartData] = useState(null);
     const [stockDetails, setStockDetails] = useState(null);
+    const [stockNews, setStockNews] = useState();
     const options = {
       scales:{
         x: {
@@ -60,6 +62,24 @@ const StockInfo = () => {
 
         setLoading(false);
     }
+    const getStockNews = async ()=>{
+      let token = JSON.parse(localStorage.getItem("Token"));
+      if(!token){
+          navigate('/')
+      }
+      const response = await axios.post(`${import.meta.env.VITE_URL}/user/getStockNews`,{
+        symbol:id.id
+      },
+        {headers: {
+        Authorization: `Bearer ${token}`,
+        }})
+      .then((res)=>{
+        // console.log(res.data.news)
+        setStockNews(res.data.news);
+      })
+
+      setLoading(false);
+    }
     const getStockParams = async ()=>{
       let token = JSON.parse(localStorage.getItem("Token"));
       if(!token){
@@ -81,9 +101,13 @@ const StockInfo = () => {
     useEffect(()=>{
         getStockHistory();
         getStockParams();
+        getStockNews();
     },[])
   return (
     <div className= 'w-full h-screen border-zinc'>
+      <div className='m-5'>
+        <BackBtn to="/investment"/>
+      </div>
        <div className="p-4 rounded-xl w-full h-4/5 flex justify-center items-center">
         {loading ?  <p>Loading chart...</p> : chartData ? <Line data={chartData} options={options}/> : <p>No data available</p>}
       </div>
@@ -101,8 +125,13 @@ const StockInfo = () => {
         </div>
         }
       </div>
-      <div className='m-5'>
-        <BackBtn to="/investment"/>
+      <div className="news h-screen flex flex-col justify-center m-5 gap-4">
+        {stockNews && stockNews.map((news)=>{
+          return(
+            <NewsCard news ={news}/>
+          )
+        }) 
+        }
       </div>
     </div>
   )

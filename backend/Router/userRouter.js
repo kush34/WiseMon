@@ -149,4 +149,14 @@ router.post("/getStockParams",verifyToken, async (req,res)=>{
       }
 })
 
+router.post("/getStockNews",verifyToken, async (req,res)=>{
+    try {
+        const symbol = req.body.symbol;
+        const result = await yahooFinance.search(symbol);
+        res.json(result);
+    } catch (error) {
+    console.error("Error fetching stock news:", error);
+    }
+})
+
 export default router;
