@@ -25,7 +25,21 @@ ChartJS.register(
 )
 
 const Graph = ({expenseData}) => {
-  
+  const options = {
+    scales:{
+      x: {
+        grid: {
+            display: false 
+        }
+    },
+    y: {
+      display: false,     
+        grid: {
+            display: false 
+        }
+    }
+    }
+  }
   // console.log(expenseData)
   const labels=expenseData.map((expense) => {
     const date = new Date(expense.createdAt); 
