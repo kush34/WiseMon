@@ -102,6 +102,7 @@ router.post("/getStock",verifyToken, async (req,res)=>{
         let {symbol} = req.body;
         const result = await yahooFinance.quote(symbol); 
         res.json({
+          symbol,
           name: result.shortName,
           price: result.regularMarketPrice,
           change: result.regularMarketChange,
@@ -113,3 +114,17 @@ router.post("/getStock",verifyToken, async (req,res)=>{
         res.status(500).json({ error: "Failed to fetch stock data" });
       }
 })
+
+router.post("/getStockInfo",verifyToken, async (req,res)=>{
+    try {
+        const symbol = req.body.symbol.toUpperCase();
+        const queryOptions = { period1: "2024-01-01", interval: "1d" }; // Year-to-date daily data
+        const result = await yahooFinance.historical(symbol, queryOptions);
+        
+        res.json(result);
+      } catch (error) {
+        res.status(500).json({ error: "Failed to fetch stock data" });
+      }
+})
+
+export default router;

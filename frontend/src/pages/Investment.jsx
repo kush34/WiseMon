@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import BackBtn from '../components/BackBtn'
 import { Search } from 'lucide-react';
 import { ChartLine } from 'lucide-react';
-
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Investment = () => {
   const [stockList,setStockList] = useState([]);
   const [symbol,setSymbol] = useState();
-  
+  const navigate = useNavigate();
   const validate =  ()=>{
     if(symbol == "" || "") return false;
     return true;
@@ -37,6 +37,9 @@ const Investment = () => {
       setStockList([...stockList,res.data]);
     })
 }
+  const handleChartClick = (code)=>{
+    navigate(`${code}`)
+  }
   return (
     <div>
       <div className="title text-2xl font-medium p-5">
@@ -55,7 +58,7 @@ const Investment = () => {
             <div className={`${stock.change<0 ? "text-red-600" : "text-green-500"}`}>
              Change Percent : {stock?.changePercent}
             </div>
-            <div className="chart hover:text-green-500 ease-in ">
+            <div onClick={()=>handleChartClick(stock.symbol)} className="chart hover:text-sky-500 ease-in ">
               <ChartLine />
             </div>
           </div>

@@ -25,28 +25,13 @@ ChartJS.register(
 )
 
 const Graph = ({expenseData}) => {
-  const options = {
-    scales:{
-      x: {
-        // display: false,
-        grid: {
-            display: false // Removes vertical grid lines
-        }
-    },
-    y: {
-      display: false,     
-        grid: {
-            display: false // Removes horizontal grid lines
-        }
-    }
-    }
-  }
+  
   // console.log(expenseData)
   const labels=expenseData.map((expense) => {
-    const date = new Date(expense.createdAt); // Converts ISO string to Date object
-    return date.toLocaleDateString(); // Returns a locale-specific date format like "11/24/2024"
+    const date = new Date(expense.createdAt); 
+    return date.toLocaleDateString(); 
   });
-  const amounts = expenseData.map((expense) => expense.amount); // Amounts for the y-axis
+  const amounts = expenseData.map((expense) => expense.amount);
   const chartData = {
     labels: labels,
     datasets: [
