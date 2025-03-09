@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom';
 import axios from 'axios';
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from "chart.js";
+import BackBtn from '../components/BackBtn';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
@@ -99,6 +100,9 @@ const StockInfo = () => {
           <div>Return On Equity: {stockDetails.returnOnEquity}</div>
         </div>
         }
+      </div>
+      <div className='m-5'>
+        <BackBtn to="/investment"/>
       </div>
     </div>
   )
