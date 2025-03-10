@@ -7,6 +7,7 @@ import axios from 'axios';
 
 const Investment = () => {
   const [stockList,setStockList] = useState([]);
+  const [index,setIndex] = useState(["^DJI","^BSESN","^NSEI"]);
   const [symbol,setSymbol] = useState();
   const navigate = useNavigate();
   const validate =  ()=>{

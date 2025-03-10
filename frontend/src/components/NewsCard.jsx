@@ -2,7 +2,7 @@ import React from 'react'
 
 const NewsCard = ({news}) => {
   return (
-    <div className='flex gap-2 justify-center items-center'>
+    <div className='flex gap-2 justify-center items-center hover:bg-zinc-300 cursor-pointer rounded-xl'>
         <div className="image">
             <img className='w-80 rounded-xl h-40' src={`${news?.thumbnail?.resolutions ? `${news.thumbnail.resolutions[0].url}` : "https://placehold.co/1600x400"}`} alt="" />
         </div>

@@ -11,7 +11,7 @@ const App = () => {
       </div>
       <div className='flex flex-col md:flex-row m-10'>
         <div className='md:w-1/2'>
-          <SplineScene/>
+          {/* <SplineScene/> */}
         </div>
         <div className="md:w-1/2 h-[35vh] md:h-[70vh] flex flex-col justify-center items-center">
           <div className='flex flex-col text-xl md:text-4xl'> 

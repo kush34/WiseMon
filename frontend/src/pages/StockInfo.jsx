@@ -114,14 +114,14 @@ const StockInfo = () => {
       <div className='flex justify-center'>
         {stockDetails && 
         <div className="summaryDe flex gap-5 flex-wrap w-3/4">
-          <div>PE Ratio: {stockDetails.peRatio}</div>
-          <div>Market Cap.: {stockDetails.marketCap}</div>
-          <div>Dividend Yield: {stockDetails.dividendYield}</div>
-          <div>Previous Close: {stockDetails.previousClose}</div>
-          <div>52-Week High: {stockDetails.fiftyTwoWeekHigh}</div>
-          <div>52-Week Low:{stockDetails.fiftyTwoWeekLow}</div>
-          <div>Profit Margin: {stockDetails.profitMargins}</div>
-          <div>Return On Equity: {stockDetails.returnOnEquity}</div>
+          <div>PE Ratio:<span className='font-medium'>{stockDetails.peRatio}</span> </div>
+          <div>Market Cap.: <span className='font-medium'>{stockDetails.marketCap}</span></div>
+          <div>Dividend Yield: <span className='font-medium'>{stockDetails.dividendYield}</span></div>
+          <div>Previous Close: <span className='font-medium'>{stockDetails.previousClose}</span></div>
+          <div>52-Week High: <span className='font-medium'>{stockDetails.fiftyTwoWeekHigh}</span></div>
+          <div>52-Week Low:<span className='font-medium'>{stockDetails.fiftyTwoWeekLow}</span></div>
+          <div>Profit Margin: <span className='font-medium'>{stockDetails.profitMargins}</span></div>
+          <div>Return On Equity: <span className='font-medium'>{stockDetails.returnOnEquity}</span></div>
         </div>
         }
       </div>
