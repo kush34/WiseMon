@@ -55,15 +55,15 @@ const Investment = () => {
         <div className="searchedList h-full p-5 overflow-x-scroll flex flex-col gap-5 justify-center items-center w-full">
           {stockList && stockList.map((stock)=>{
             return (
-            <div className = 'sm:text-sm md:text-lg xl:text-xl md:w-1/3 bg-zinc-200 rounded mt-2 p-3'>
+            <div className = 'sm:text-sm md:text-lg xl:text-xl md:w-1/3 bg-black text-zinc-100 rounded mt-2 p-3'>
               <div>
-                Company Name : {stock?.name}
+                Company Name : <span className='font-medium'>{stock?.name}</span> 
               </div>
               <div>
                 Current Price: {stock?.price}
               </div>
-              <div className={`${stock.change<0 ? "text-red-600" : "text-green-500"}`}>
-              Change Percent : {stock?.changePercent}
+              <div className={``}>
+              Change Percent : <span className={`font-medium ${stock.change<0 ? "text-red-600" : "text-green-500"}`}>{stock?.changePercent}</span> 
               </div>
               <div onClick={()=>handleChartClick(stock.symbol)} className="chart hover:text-sky-500 ease-in ">
                 <ChartLine />
