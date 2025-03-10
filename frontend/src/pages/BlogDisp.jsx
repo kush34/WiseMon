@@ -22,9 +22,9 @@ const BlogDisp = () => {
         fetchBlogContent();
     },[])
   return (
-    <div>
-        <div className="blog-image h-[50vh] flex w-full justify-center">
-            <img className='h-[50vh] w-3/4' src={blogInfo?.image ? blogInfo?.image :   "https://placehold.co/1600x200"} alt="" />
+    <div className='h-screen'>
+        <div className="blog-image flex w-full justify-center">
+            <img className='h-100 w-4/5' src={blogInfo?.image ? blogInfo?.image :   "https://placehold.co/1600x200"} alt="" />
         </div>
       <div className="w-full text-3xl px-10 py-5 font-bold blogTitl">
         {blogInfo?.title}
@@ -35,7 +35,7 @@ const BlogDisp = () => {
         </div>
       </div>
       <div className="backbtn p-5">
-        <BackBtn/>
+        <BackBtn to="/blog"/>
       </div>
     </div>
   )

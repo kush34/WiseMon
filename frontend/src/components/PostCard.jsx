@@ -5,7 +5,7 @@ import { Heart } from 'lucide-react';
 
 const PostCard = ({post}) => {
   return (
-    <div className='w-full md:w-1/2 h-1/3 flex flex-col rounded justify-around border'>
+    <div className='w-full md:w-1/2 h-1/3 flex flex-col rounded justify-around bg-zinc-300 hover:bg-green-300'>
         <div className="post-title text-xl font-medium p-2">
             {post.title}
         </div>
