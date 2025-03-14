@@ -2,12 +2,18 @@ import React from 'react'
 import { Share } from 'lucide-react';
 import { MessageCircle } from 'lucide-react';
 import { Heart } from 'lucide-react';
+import PostDate from './PostDate';
 
 const PostCard = ({post}) => {
   return (
     <div className='w-full md:w-1/2 h-1/3 flex flex-col rounded justify-around bg-zinc-300 hover:bg-green-300'>
-        <div className="post-title text-xl font-medium p-2">
-            {post.title}
+        <div className='flex justify-between'>
+          <div className="post-title text-xl font-medium p-2">
+              {post.title}
+          </div>
+          <div className='p-2 text-zinc-700'>
+          <PostDate createdAt={post.createdAt} />
+          </div>
         </div>
         <div className="post-description p-2 h-1/3 overflow-hidden">
           {post.content}
