@@ -24,7 +24,7 @@ router.post("/register", async (req, res) => {
                 email,
                 password:hash,
                 })
-                // console.log(user)
+                console.log(user)
             });
             });
           res.status(200).send("user created");
@@ -47,7 +47,7 @@ router.post('/login',async (req,res)=>{
             return res.send("something went wrong...")
         }
         bcrypt.compare(password, user.password, async (err, result) => {
-            if (err) throw err;
+            // if (err) throw err;
             // console.log(result);
             if(!result){
                 res.send("something went wrong")
@@ -159,4 +159,17 @@ router.post("/getStockNews",verifyToken, async (req,res)=>{
     }
 })
 
+router.get("/news", async (req, res) => {
+    const topic = req.query.topic || "stock market";
+    const API_KEY = process.env.NEWS_API_KEY;
+    const url = `https://newsapi.org/v2/everything?q=${topic}&apiKey=${API_KEY}`;
+  
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      res.json(data);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch news" });
+    }
+  });
 export default router;

@@ -4,6 +4,7 @@ import { Search } from 'lucide-react';
 import { ChartLine } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import NewsComp from '../components/NewsComp';
 
 const Investment = () => {
   const [stockList,setStockList] = useState([]);
@@ -47,9 +48,12 @@ const Investment = () => {
         Investment
       </div>
       <div className='h-2/4 flex'>
-        <div className='w-1/3 h-full m-5'>
+        <div className='w-1/3 h-full overflow-scroll'>
           <div className='font-medium'>
             NEWS FEED
+          </div>
+          <div>
+            <NewsComp/>
           </div>
         </div>
         <div className="searchedList h-full p-5 overflow-x-scroll flex flex-col gap-5 justify-center items-center w-full">
