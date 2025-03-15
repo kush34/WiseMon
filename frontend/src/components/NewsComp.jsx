@@ -3,19 +3,21 @@ import axios from 'axios';
 const NewsComp = () => {
     const [news, setNews] = useState([]);
     const fetchNews = async ()=>{
-        console.log("func fired1");
+        // console.log("func fired1");
+        setIsLoading(true);
         let token = JSON.parse(localStorage.getItem("Token"));
         if(!token){
-            navigate('/')
+          navigate('/')
         }
         axios.get(`${import.meta.env.VITE_URL}/user/news`, 
           {headers: {
-          Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${token}`,
           }})
-        .then((res)=>{
-          console.log(res.data);
-          setNews(res.data.articles)
-        })
+          .then((res)=>{
+            console.log(res.data);
+            setNews(res.data.articles)
+          })
+          setIsLoading(false);
     }
     useEffect(()=>{
         fetchNews()

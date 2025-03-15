@@ -10,8 +10,9 @@ const App = () => {
         <Navigation/>
       </div>
       <div className='flex flex-col md:flex-row m-10'>
-        <div className='md:w-1/2'>
+        <div className='md:w-1/2 flex items-center justify-center'>
           {/* <SplineScene/> */}
+          <img className='w-3/4' src="main.png" alt="" srcset="" />
         </div>
         <div className="md:w-1/2 h-[35vh] md:h-[70vh] flex flex-col justify-center items-center">
           <div className='flex flex-col text-xl md:text-4xl font-light'> 
@@ -21,7 +22,9 @@ const App = () => {
             </span> 
           </div>
           <div>
-            <button className='bg-zinc-900 text-white hover:bg-green-700 hover:text-white font-bold ease-in duration-120  rounded px-5 py-2 m-5 cursor-pointer'>Get Started</button>
+            <a href="/register">
+              <button className='bg-zinc-900 text-white hover:bg-green-700 hover:text-white font-bold ease-in duration-120  rounded px-5 py-2 m-5 cursor-pointer'>Get Started</button>
+            </a>
           </div>
         </div>
       </div>
