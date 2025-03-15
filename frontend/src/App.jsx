@@ -14,14 +14,14 @@ const App = () => {
           {/* <SplineScene/> */}
         </div>
         <div className="md:w-1/2 h-[35vh] md:h-[70vh] flex flex-col justify-center items-center">
-          <div className='flex flex-col text-xl md:text-4xl'> 
+          <div className='flex flex-col text-xl md:text-4xl font-light'> 
             Your Ultimate 
-            <span className='text-2xl md:text-6xl font-bold'>
+            <span className='text-2xl md:text-6xl font-medium'>
               Finance Guide
             </span> 
           </div>
           <div>
-            <button className='bg-green-600 rounded px-5 py-2 m-5 cursor-pointer'>Get Started</button>
+            <button className='bg-zinc-900 text-white hover:bg-green-700 hover:text-white font-bold ease-in duration-120  rounded px-5 py-2 m-5 cursor-pointer'>Get Started</button>
           </div>
         </div>
       </div>

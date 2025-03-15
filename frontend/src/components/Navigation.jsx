@@ -12,7 +12,7 @@ const Navigation = () => {
         </div>
         <div className="navlinks flex justify-around mr-10">
             <div 
-            className='bg-green-600 px-4 py-2 rounded cursor-pointer'
+            className='bg-zinc-900 text-white hover:bg-green-700 hover:text-white font-bold ease-in duration-120  rounded px-5 py-2 cursor-pointer'
             onClick={()=>navigate('/authenticate')}
             >
                 Login
